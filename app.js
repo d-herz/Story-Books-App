@@ -29,8 +29,20 @@ if(process.env.NODE_ENV === 'development'){
   app.use(morgan('dev'))
 }
 
+// Handlebars Helpers
+const { formatDate } = require('./helpers/hbs')
+
 // Handlebars
-app.engine('.hbs', engine({defaultLayout: 'main', extname: '.hbs'}))
+app.engine(
+  '.hbs', 
+  engine({
+  helpers: {
+    formatDate,
+  },
+  defaultLayout: 'main', 
+  extname: '.hbs'
+  })
+)
 app.set('view engine', '.hbs')
 
 // Sessions (this needs to be above passport middleware)
