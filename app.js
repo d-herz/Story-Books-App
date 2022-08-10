@@ -58,6 +58,7 @@ app.engine(
   extname: '.hbs'
   })
 )
+
 app.set('view engine', '.hbs')
 
 // Sessions (this needs to be above passport middleware)
@@ -93,4 +94,4 @@ const PORT = process.env.PORT || 3000
 app.listen(
   PORT, 
   console.log(`Server Running in ${process.env.NODE_ENV} mode on port ${PORT}`)
-  )
+)
