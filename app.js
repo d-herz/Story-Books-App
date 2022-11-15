@@ -20,6 +20,7 @@ require('./config/passport')(passport)
 connectDB()
 
 const app = express()
+//New comment 
 
 // Body Parser 
 app.use(express.urlencoded({ extended: false }))
